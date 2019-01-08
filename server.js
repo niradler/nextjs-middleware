@@ -21,7 +21,7 @@ const main = async () => {
 
         server.get('*', (req, res) => {
 
-            return res.view.handle({});
+            return res.view.handle({}); //pass an empty object {} for auto filling
         });
 
         server.listen(3000, (err) => {
