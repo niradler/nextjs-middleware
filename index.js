@@ -8,7 +8,7 @@ const nextMiddleware = debug => {
   return app.prepare().then(() => (_req, _res, next) => {
     const parsedUrl = parse(_req.url, true);
     const _path = parsedUrl.pathname;
-    const _query = {} // TODO:
+    const _query = parsedUrl.query;
     _req.parsedUrl = parsedUrl;
     _res.view = {
       handle: ({req=_req,res=_res,path=_path,query=_query}) => handle(req, res, path, query),
