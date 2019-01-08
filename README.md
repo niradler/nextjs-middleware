@@ -9,7 +9,7 @@ npm i nextjs-middleware -S
 server.js
 ```
 const express = require('express')
-const NextMiddleware = require('./index');
+const NextMiddleware = require('nextjs-middleware');
 const main = async() => {
     try {
         const debug = true;
