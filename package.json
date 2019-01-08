@@ -1,0 +1,21 @@
+{
+  "name": "nextjs-middleware",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "next build && node example/server.js"
+  },
+  "keywords": [],
+  "author": "Nir Adler",
+  "license": "ISC",
+  "devDependencies": {
+    "express": "^4.16.4",
+    "koa": "^2.6.2",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0"
+  },
+  "dependencies": {
+    "next": "^7.0.2"
+  }
+}
