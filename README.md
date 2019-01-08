@@ -9,26 +9,30 @@ npm i nextjs-middleware -S
 server.js
 ```
 const express = require('express')
-const NextMiddleware = require('nextjs-middleware');
-const main = async() => {
+const NextMiddleware = require('./index');
+const main = async () => {
     try {
         const debug = true;
         const nextMiddleware = await NextMiddleware(debug); // make sure next prepare finish.
         const server = express();
         server.use(nextMiddleware);
-        server.get('/', async(req, res) => {
-            return res
-                .view
-                .handle({});
-        })
-        server.get('/example', async(req, res) => {
+
+        server.get('/example', (req, res) => {
             if (!req.parsedUrl.query.page) {
                 return res.redirect('/example?page=2');
             }
-            return res
-                .view
-                .render({req,res,path:'/examplePage',query:req.parsedUrl.query});
-        })
+            return res.view.render({req,res,path:'/examplePage',query:req.parsedUrl.query});
+        });
+
+        server.get('/example2', (req, res) => {
+
+            return res.view.render({path:'/examplePage'}); 
+        });
+
+        server.get('*', (req, res) => {
+
+            return res.view.handle({}); //pass an empty object {} for auto filling
+        });
 
         server.listen(3000, (err) => {
             if (err) 
