@@ -1,21 +1,23 @@
 {
   "name": "nextjs-middleware",
-  "version": "0.0.1",
-  "description": "",
+  "version": "0.0.2",
+  "description": "Express middleware for Nextjs.",
   "main": "index.js",
   "scripts": {
-    "test": "node example/server.js"
+    "start": "next build && node server.js"
   },
-  "keywords": [],
+  "keywords": ["nextjs","express","middleware"],
   "author": "Nir Adler",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "express": "^4.16.4",
-    "koa": "^2.6.2",
     "react": "^16.7.0",
     "react-dom": "^16.7.0"
   },
   "dependencies": {
     "next": "^7.0.2"
-  }
+  },
+  "repository": "niradler/nextjs-middleware",
+  "bugs": "https://github.com/niradler/nextjs-middleware/issues",
+  "homepage": "https://github.com/niradler/nextjs-middleware"
 }

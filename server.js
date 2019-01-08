@@ -1,5 +1,5 @@
 const express = require('express')
-const NextMiddleware = require('../index');
+const NextMiddleware = require('./index');
 const main = async() => {
     try {
         const debug = true;
